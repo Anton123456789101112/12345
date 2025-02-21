@@ -1,0 +1,324 @@
+body {
+    background-color: #183e4f;
+    margin: 0;
+}
+
+.menuv1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 100;
+}
+
+.crossm {
+position: absolute;
+width: 48px;
+height: 48px;
+top: 0;
+margin-left: 40.757px;
+margin-top: 37.86px;
+}
+
+.logom {
+position: absolute;
+width: 129.531px;
+height: auto;
+top: 0;
+left: calc(50% - 129.531px / 2);
+margin-top: calc(37.86px + 7px);
+}
+
+.tdotsm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 51px;
+    height: 51px;
+    margin-right: 40.757px;
+    margin-top: 37.86px;
+}
+
+.backgroundCircle {
+    position: absolute;
+    height: 1670px;
+    width: 1670px;
+    border-radius: 50%;
+    background-image: radial-gradient(rgb(255, 151, 0) 0%, rgba(255, 151, 0, 0.534) 40%, rgba(255, 151, 114, 0) 70%);
+    top: calc(-1670px / 2 + 1000);
+    left: calc(-1670px / 2);
+    transition: all 20s linear;
+    visibility: hidden;
+    z-index: 1;
+    }
+
+.qrtextbox {
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: auto;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-style: normal;
+    text-align: center;
+    top: calc(88.92%);
+    visibility: hidden;
+    z-index: 1;
+}
+
+.agetext {
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 160px;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-top: 0;
+    line-height: 0;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal;
+    overflow: visible;
+    margin-left: 40px;
+    margin-top: -20px;
+
+}
+
+.ID-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.ID-canvas {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+}
+
+.nametext {
+    position: absolute;
+    width: 100%;
+    top: calc(70.92% - 200px);
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 90px;
+    font-style: normal;
+    text-align: center;
+    z-index: 7;
+
+}
+
+.pntext {
+    position: absolute;
+    width: 100%;
+    top: calc(70.92% - 60px);
+    color: rgb(69 69 69);
+    -webkit-text-stroke: 0.8px rgb(129, 129, 129);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 65px;
+    font-style: normal;
+    text-align: center;
+    z-index: 7;
+
+}
+
+.linebox {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+   
+}
+
+.b1, .b2, .r1, .b22 {
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    z-index: 6;
+    transform-origin: center; /* Rotate around the center */
+    visibility: hidden;
+}
+
+.b1 {
+    top: -50%;
+    left: -50%;
+}
+
+.b2 {
+    top: -30%;
+    left: -50%;
+}
+
+.b22 {
+    top: -20%;
+    left: -70%;
+    z-index: 10;
+    opacity: 0.5;
+}
+
+.r1 {
+    top: -50%;
+    left: -70%;
+}
+
+.loadingback {
+    z-index: 200;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #2020203f;
+
+}
+
+.loadingbox1 {
+    z-index: 201;
+    position: absolute;
+    top: calc(50% - 70px / 2);
+    left: calc(50% - 280px / 2);
+    height: 70px;
+    line-height: 70px;
+    width: 280px;
+    background-color: #2a2e2e;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    font-style: normal;
+}
+
+.loadingtext1 {
+    z-index: 203;
+}
+
+#hole {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 50%;
+    height: 500px;
+    width: 500px;;
+   /* background: rgba(255, 255, 255, 0); /* Transparent */
+    pointer-events: none;
+    z-index: 20; /* Make sure the hole is above the content */
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.5) 70%, /* Border color fading inward */
+    rgba(0, 0, 0, 0) 90% /* Fades to transparent */
+  );
+  mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 90%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 0) 90%
+  );
+}
+
+/* .hole::before {
+    content: '';
+    position: absolute;
+    top: -20px; 
+    left: -20px; 
+    right: -20px; 
+    bottom: -20px; 
+    border-radius: 50%;
+    background-image: radial-gradient(rgba(255, 153, 0, 0) 0%, rgba(255, 153, 0, 0) 40%, rgba(56, 56, 56, 0.445) 70%);
+    filter: blur(20px); 
+    z-index: 3;
+  } */ 
+
+.arrow-box {
+padding: 10px;
+background-color: #ffefdb;
+width: 50%;
+height: auto;
+position: absolute;
+left: calc(50%/2);
+top: calc(70.92% + 142px - 310px);
+border-radius: 15px;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+flex-direction: column;
+z-index: 16;
+}
+.arrow-box-arrow {
+position: absolute;
+width: 60px;
+height:60px;
+background-color: #ffefdb;
+transform: rotate(45deg);
+top: 50%;
+z-index: 15;
+}
+.arrow-box-text {
+margin: 0;
+margin-top: 15px;
+margin-bottom: 15px;
+color: rgb(0, 0, 0);
+-webkit-text-stroke: 0.4px rgb(0, 0, 0);
+font-family: "Roboto", sans-serif;
+font-weight: 400;
+font-size: 40px;
+font-style: normal;
+text-align: center;
+z-index: 16;
+}
+
+.arrow-box2 {
+    padding: 10px;
+    background-color: #032129;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    left: calc(50%/2);
+    top: calc(70.92% + 95px - 310px);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    z-index: 16;
+    display: none;
+    }
+    .arrow-box-arrow2 {
+    position: absolute;
+    width: 60px;
+    height:60px;
+    background-color: #032129;
+    transform: rotate(45deg);
+    top: 65%;
+    z-index: 15;
+    }
+    .arrow-box-text2 {
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: rgb(255, 255, 255);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    font-style: normal;
+    text-align: center;
+    z-index: 16;
+    }
+
+      

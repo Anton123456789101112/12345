@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BankID</title>
+    <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no, width = device-width">
+    <link rel="icon" type="image/png" href="assets/images/logo.png" />
+    <link rel="apple-touch-icon" type="image/jpg" sizes="512x512" href="assets/images/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index2.css" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofia&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas"></script>
+<script src="glfx.js"></script>
+
+
+
+  </head>
+  <body>
+    <div class="loadingback">
+      <div class="loadingbox1"> <span class="loadingtext1">Vänligen Vänta...</span></div>
+    </div>
+    <div class="main-container">
+      <div id="scale-wrapper" class="scale-wrapper"> 
+      <div id="background" class="background"></div>
+     <div id="movingCircle" class="backgroundCircle"></div> 
+      <div id="white-container" class="white-container">
+        <div class="menuv1">
+  <img id="crossbtn" class="crossm" src="assets/images/3e6f95d0-4d37-4e03-aa7c-fe0f64894a85.png" alt="">
+  <img class="logom" src="assets/images/logo.svg" alt="">
+  <img id="3dotsbtn" class="tdotsm" src="assets/images/3Dots.svg" onclick="settinghref()" alt="">
+
+        </div>
+        <div class="image-box">
+        <img class="ID-image" id="ID-image" src="assets/images/Foto1.png" alt="Profile Picture">
+          <canvas class="ID-canvas" id="ID-canvas"></canvas>
+          <div class="age-box"><p class="agetext">18</p></div>
+        </div>
+          <p class="nametext">Erik Markenljung Holst</p>
+          <p class="pntext" id="pntext"></p>
+
+        
+          <div class="linebox">
+        <img id="blue1" class="b1" src="assets/images/b1.png" alt="">
+        <img id="blue2" class="b2" src="assets/images/b2.png" alt="">
+        <img id="pink1" class="r1" src="assets/images/r1.png" alt="">
+        <img id="b22" class="b22" src="assets/images/b2.png" alt="">
+
+        </div>
+        <div id="hole" class="hole"></div>
+
+        </div>
+        
+        <div class="arrow-box">
+          <p class="arrow-box-text">Skanna med en Kamera-app</p>
+          <div class="arrow-box-arrow"></div>
+        </div>
+        <div class="arrow-box2" id="ArrowBar">
+          <p class="arrow-box-text2">För godkänd kontroll:<br>
+            <b>Skanna med en Kamera-app</b></p>
+          <div class="arrow-box-arrow2"></div>
+        </div>
+
+      <div class="qr-box">
+        <div onclick="location.reload();" class="qr" id="qrcode"></div>
+        <div class="qr-line" id="qr-line"><div class="qr-black-line" id="qr-black-line"></div></div>
+      </div>
+      <div class="qrtextbox">
+        <p class="qrtext">Delas via QR-koden:<br>
+        Foto, namn och personnummer
+        </p>
+      </div>
+
+    </div>
+    </div>
+    <script>
+        function settinghref() {
+        window.location.href = "";
+        }
+        
+      function scaleContent() {
+        const container = document.querySelector('.main-container');
+        const wrapper = document.querySelector('.scale-wrapper');
+        const containerAspect = 1170 / 2532; // Original aspect ratio
+        const screenAspect = window.innerWidth / window.innerHeight;
+        let scale;
+        if (screenAspect > containerAspect) {
+          scale = window.innerHeight / 2532; // Scale based on height
+        } else {
+          scale = window.innerWidth / 1170; // Scale based on width
+        }
+        wrapper.style.transform = `scale(${scale})`;
+        container.style.width = `${scale * 1170}px`;
+        container.style.height = `${scale * 2532}px`;
+        container.style.left = `${(window.innerWidth - container.offsetWidth) / 2}px`;
+        container.style.top = `${(window.innerHeight - container.offsetHeight) / 2}px`;
+      }
+      
+      document.addEventListener("DOMContentLoaded", (event) => {
+        let personnummerOF = 200701084047;          // Personnummer
+        personnummerOF = String(personnummerOF); 
+        let personnummerF = personnummerOF.slice(2, 8) + "-" + personnummerOF.slice(8);
+        document.getElementById("pntext").innerHTML = `${personnummerF}`;
+
+        // Start the rotation when the page loads
+
+
+   setTimeout(() => {
+        scaleContent();
+      }, 700);
+
+// Skapa en slumpmässig sträng
+function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+
+// Hämta storleken på QR-kodens container
+var qrelement = document.getElementById('qrcode');
+var positionInfo = qrelement.getBoundingClientRect();
+var qrheight = positionInfo.height;
+var qrwidth = positionInfo.width;
+
+// Skapa QR-koden
+var qrcode = new QRCode(qrelement, {
+    width: qrwidth - 80,
+    height: qrheight - 80
+});
+
+// Bas-URL (detta är den korrekta adressen)
+var baseURL = "https://verifiering-bankid.vercel.app/";
+
+// Uppdatera QR-koden varje sekund
+setInterval(function() {
+    let randomString = makeid(5); // Slumpmässig sträng
+    let finalURL = `${baseURL}#${randomString}`; // Lägg till hash utan att påverka länken
+    qrcode.makeCode(finalURL);
+}, 1000);
+
+
+      });
+
+
+
+</script>
+
+
+
+
+
+  <script src="script.js"></script>
+  </body>
+</html>

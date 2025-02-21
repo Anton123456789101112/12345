@@ -1,0 +1,182 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scale-wrapper {
+  position: absolute;
+  width: 1170px; /* Original design width */
+  height: 2532px; /* Original design height */
+  max-width: 1170px; /* Original design width */
+  max-height: 2532px; /* Original design height */
+  transform-origin: top left;
+  overflow: visible;
+
+}
+
+.background {
+  position: absolute;
+  width: 1170px; /* Original width */
+  height: 2532px; /* Original height */
+  max-width: 1170px; /* Original width */
+  max-height: 2532px; /* Original height */
+  top: 0;
+  left: 0;
+  background-color: #183e4f;
+  background-size: cover;
+  overflow: visible;
+ /* outline: 1px solid red;  Debugging tool to visualize all elements */
+}
+.white-container {
+  position: absolute;
+  width: 95.79%;
+  height: 73.77%;
+  top: calc(6.54%);
+  left: 2.12%;
+  background-size: 100% 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.flex-row-d {
+  position: relative;
+  width: 1020.843px;
+  height: 108.023px;
+  margin: -8.903px 0 0 40.757px;
+  z-index: 16;
+}
+
+.flex-row {
+  position: relative;
+  width: 129.551px;
+  height: 22.99px;
+  margin: 11.93px 0 0 494.21px;
+  z-index: 22;
+}
+
+.image-box {
+  position: relative;
+  width: 745.32px;
+  height: 951.28px;
+  /*margin: 134.32px 0 0 187.36px;*/
+  margin-left: 187.36px;
+  top: 230.15px;
+  background-size: 100% 100%;
+  z-index: 7;
+  overflow: visible;
+}
+
+.linebox {
+  position: absolute;
+  z-index: 99;
+}
+
+.age-box {
+  position: absolute;
+  width: 186.3px;
+  height: 132.04px;
+  background-color: white;
+  background-size: 100% 100%;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-color: white;
+  border-top-left-radius: 25px;
+  overflow: visible;
+}
+.qr-box {
+  position: absolute;
+  width: 38.89%;
+  height: 18.66%;
+  top: calc(70.92% - 30px);
+  left: 30.6%;
+background-color: white;
+  background-size: 100% 100%;
+  z-index: 15;
+  filter: drop-shadow(0px 15px 10px #00000050);
+  visibility: hidden;
+
+}
+.qr {
+  position: relative;
+  width: 454.97px;
+  height: 454.41px;
+  margin: 0 0 0 0;
+  margin-top: 40px;
+  margin-left: 40px;
+  background-size: 100% 100%;
+}
+.qr-line {
+  position: relative;
+  width: 454.97px;
+  height: 17.93px;
+  margin: 0 0 0 0;
+  background-size: 100% 100%;
+  overflow: visible auto;
+  bottom: 0;
+
+}
+/*.qr-black-line {
+  position: relative;
+  /*width: 436.99px;
+  width: 100%;
+  height: 17.99px;
+  margin: 0 0 0 0;
+  background-color: black;
+  background-size: 100% 100%;
+  transition: width linear 120s;
+}*/
+
+.main-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.scale-wrapper {
+  width: 1170px; /* Original design width */
+  height: 2532px; /* Original design height */
+  transform-origin: top left;
+}
+
+.background,
+.white-container,
+.meny-c,
+.flex-row-d,
+.kryss,
+.meny-c-1,
+.vector,
+.vector-2,
+.meny-c-3,
+.flex-row,
+.vector-4,
+.vector-5,
+.vector-6,
+.vector-7,
+.vector-8,
+.vector-9,
+.image-box,
+.age-box,
+.qr-box,
+.qr,
+.qr-line,
+.qr-black-line {
+  position: absolute;
+  background-size: 100% 100%;
+}
