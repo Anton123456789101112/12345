@@ -129,16 +129,16 @@ background-color: white;
   bottom: 0;
 
 }
-/*.qr-black-line {
+.qr-black-line {
   position: relative;
-  /*width: 436.99px;
+  /*width: 436.99px;*/
   width: 100%;
   height: 17.99px;
   margin: 0 0 0 0;
   background-color: black;
   background-size: 100% 100%;
   transition: width linear 120s;
-}*/
+}
 
 .main-container {
   position: absolute;
