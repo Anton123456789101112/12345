@@ -1,6 +1,6 @@
 {
     "display": "standalone",
     "orientation": "portrait-primary",
-    "start_url": "/start",
+    "start_url": "/index",
     "short_name": "BankID"
 }
