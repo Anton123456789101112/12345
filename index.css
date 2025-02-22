@@ -79,6 +79,7 @@
   overflow: visible;
 }
 
+/* So lines go above human */
 .linebox {
   position: absolute;
   z-index: 99;
